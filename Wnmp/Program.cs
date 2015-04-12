@@ -34,16 +34,17 @@ namespace Wnmp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             OSVersionCheck();
-            Application.Run(new Main());
+            Application.Run(formInstance = new Main());
         }
+        public static Main formInstance;
 
         /// <summary>
         /// Checks if the OS is Vista+
         /// </summary>
         private static void OSVersionCheck()
         {
-            if (Environment.OSVersion.Version.Major < 6) {
-                MessageBox.Show("Windows Vista+ is required to run Wnmp");
+            if (Environment.OSVersion.Version.Major < 4) {
+                MessageBox.Show("Windows XP+ is required to run Wnmp");
                 Process process = Process.GetCurrentProcess();
                 process.Kill();
             }

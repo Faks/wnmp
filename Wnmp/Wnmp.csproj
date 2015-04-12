@@ -78,7 +78,6 @@
     </Compile>
     <Compile Include="Internals\Common.cs" />
     <Compile Include="Helpers\Log.cs" />
-    <Compile Include="Internals\Constants.cs" />
     <Compile Include="Internals\NativeMethods.cs" />
     <Compile Include="Forms\UpdatePrompt.cs">
       <SubType>Form</SubType>

@@ -19,7 +19,7 @@ This file is part of Wnmp.
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
-using Wnmp.Helpers;
+
 using Wnmp.Internals;
 namespace Wnmp.Forms
 {
@@ -56,14 +56,7 @@ namespace Wnmp.Forms
 
         private void viewchange_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            try
-            {
-                Process.Start(Constants.WhatsNewUrl);
-            }
-            catch (Exception ex)
-            {
-                Log.wnmp_log_error(ex.Message, Log.LogSection.WNMP_MAIN);
-            }
+            Process.Start("https://www.getwnmp.org/WhatsNew");
         }
     }
 }

@@ -23,9 +23,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Wnmp")]
 [assembly: AssemblyDescription("Windows, Nginx, MariaDB & PHP Control Panel")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Kurt Cancemi")]
+[assembly: AssemblyCompany("Jonh Mark")]
 [assembly: AssemblyProduct("Wnmp")]
-[assembly: AssemblyCopyright("Copyright © 2012-2015 Kurt Cancemi")]
+[assembly: AssemblyCopyright("Copyright © 2015 Jonh Mark")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

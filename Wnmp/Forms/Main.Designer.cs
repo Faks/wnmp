@@ -88,7 +88,7 @@ namespace Wnmp.Forms
             this.ngx_start = new System.Windows.Forms.Button();
             this.ngx_stop = new System.Windows.Forms.Button();
             this.mdb_shell = new System.Windows.Forms.Button();
-            this.start_all = new System.Windows.Forms.Button();
+            this.start = new System.Windows.Forms.Button();
             this.stop = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.wnmpdir = new System.Windows.Forms.Button();
@@ -273,7 +273,6 @@ namespace Wnmp.Forms
             this.php_restart.TabIndex = 78;
             this.php_restart.Text = "Restart";
             this.php_restart.UseVisualStyleBackColor = true;
-            this.php_restart.Click += new System.EventHandler(this.php_restart_Click);
             // 
             // mdb_restart
             // 
@@ -283,7 +282,6 @@ namespace Wnmp.Forms
             this.mdb_restart.TabIndex = 77;
             this.mdb_restart.Text = "Restart";
             this.mdb_restart.UseVisualStyleBackColor = true;
-            this.mdb_restart.Click += new System.EventHandler(this.mdb_restart_Click);
             // 
             // ngx_reload
             // 
@@ -293,7 +291,6 @@ namespace Wnmp.Forms
             this.ngx_reload.TabIndex = 76;
             this.ngx_reload.Text = "Reload";
             this.ngx_reload.UseVisualStyleBackColor = true;
-            this.ngx_reload.Click += new System.EventHandler(this.ngx_reload_Click);
             // 
             // php_log
             // 
@@ -303,7 +300,6 @@ namespace Wnmp.Forms
             this.php_log.TabIndex = 75;
             this.php_log.Text = "Logs";
             this.php_log.UseVisualStyleBackColor = true;
-            this.php_log.Click += new System.EventHandler(this.php_log_Click);
             // 
             // mdb_log
             // 
@@ -313,7 +309,6 @@ namespace Wnmp.Forms
             this.mdb_log.TabIndex = 74;
             this.mdb_log.Text = "Logs";
             this.mdb_log.UseVisualStyleBackColor = true;
-            this.mdb_log.Click += new System.EventHandler(this.mdb_log_Click);
             // 
             // ngx_log
             // 
@@ -323,7 +318,6 @@ namespace Wnmp.Forms
             this.ngx_log.TabIndex = 73;
             this.ngx_log.Text = "Logs";
             this.ngx_log.UseVisualStyleBackColor = true;
-            this.ngx_log.Click += new System.EventHandler(this.ngx_log_Click);
             // 
             // php_cfg
             // 
@@ -333,7 +327,6 @@ namespace Wnmp.Forms
             this.php_cfg.TabIndex = 72;
             this.php_cfg.Text = "Configuration";
             this.php_cfg.UseVisualStyleBackColor = true;
-            this.php_cfg.Click += new System.EventHandler(this.php_cfg_Click);
             // 
             // mdb_cfg
             // 
@@ -343,7 +336,6 @@ namespace Wnmp.Forms
             this.mdb_cfg.TabIndex = 71;
             this.mdb_cfg.Text = "Configuration";
             this.mdb_cfg.UseVisualStyleBackColor = true;
-            this.mdb_cfg.Click += new System.EventHandler(this.mdb_cfg_Click);
             // 
             // ngx_config
             // 
@@ -353,7 +345,6 @@ namespace Wnmp.Forms
             this.ngx_config.TabIndex = 70;
             this.ngx_config.Text = "Configuration";
             this.ngx_config.UseVisualStyleBackColor = true;
-            this.ngx_config.Click += new System.EventHandler(this.ngx_config_Click);
             // 
             // label8
             // 
@@ -456,7 +447,6 @@ namespace Wnmp.Forms
             this.mdb_stop.TabIndex = 57;
             this.mdb_stop.Text = "Stop";
             this.mdb_stop.UseVisualStyleBackColor = true;
-            this.mdb_stop.Click += new System.EventHandler(this.mdb_stop_Click);
             // 
             // mdb_start
             // 
@@ -466,7 +456,6 @@ namespace Wnmp.Forms
             this.mdb_start.TabIndex = 56;
             this.mdb_start.Text = "Start";
             this.mdb_start.UseVisualStyleBackColor = true;
-            this.mdb_start.Click += new System.EventHandler(this.mdb_start_Click);
             // 
             // php_start
             // 
@@ -476,7 +465,6 @@ namespace Wnmp.Forms
             this.php_start.TabIndex = 55;
             this.php_start.Text = "Start";
             this.php_start.UseVisualStyleBackColor = true;
-            this.php_start.Click += new System.EventHandler(this.php_start_Click);
             // 
             // php_stop
             // 
@@ -486,7 +474,6 @@ namespace Wnmp.Forms
             this.php_stop.TabIndex = 54;
             this.php_stop.Text = "Stop";
             this.php_stop.UseVisualStyleBackColor = true;
-            this.php_stop.Click += new System.EventHandler(this.php_stop_Click);
             // 
             // ngx_start
             // 
@@ -496,7 +483,6 @@ namespace Wnmp.Forms
             this.ngx_start.TabIndex = 53;
             this.ngx_start.Text = "Start";
             this.ngx_start.UseVisualStyleBackColor = true;
-            this.ngx_start.Click += new System.EventHandler(this.ngx_start_Click);
             // 
             // ngx_stop
             // 
@@ -506,7 +492,6 @@ namespace Wnmp.Forms
             this.ngx_stop.TabIndex = 52;
             this.ngx_stop.Text = "Stop";
             this.ngx_stop.UseVisualStyleBackColor = true;
-            this.ngx_stop.Click += new System.EventHandler(this.ngx_stop_Click);
             // 
             // mdb_shell
             // 
@@ -516,17 +501,15 @@ namespace Wnmp.Forms
             this.mdb_shell.TabIndex = 58;
             this.mdb_shell.Text = "Open MariaDB Shell";
             this.mdb_shell.UseVisualStyleBackColor = true;
-            this.mdb_shell.Click += new System.EventHandler(this.mdb_shell_Click);
             // 
-            // start_all
+            // start
             // 
-            this.start_all.Location = new System.Drawing.Point(576, 3);
-            this.start_all.Name = "start_all";
-            this.start_all.Size = new System.Drawing.Size(63, 36);
-            this.start_all.TabIndex = 49;
-            this.start_all.Text = "Start all";
-            this.start_all.UseVisualStyleBackColor = true;
-            this.start_all.Click += new System.EventHandler(this.start_Click);
+            this.start.Location = new System.Drawing.Point(576, 3);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(63, 36);
+            this.start.TabIndex = 49;
+            this.start.Text = "Start all";
+            this.start.UseVisualStyleBackColor = true;
             // 
             // stop
             // 
@@ -536,7 +519,6 @@ namespace Wnmp.Forms
             this.stop.TabIndex = 50;
             this.stop.Text = "Stop all";
             this.stop.UseVisualStyleBackColor = true;
-            this.stop.Click += new System.EventHandler(this.stop_Click);
             // 
             // panel1
             // 
@@ -544,7 +526,7 @@ namespace Wnmp.Forms
             this.panel1.Controls.Add(this.wnmpdir);
             this.panel1.Controls.Add(this.log_rtb);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.start_all);
+            this.panel1.Controls.Add(this.start);
             this.panel1.Controls.Add(this.stop);
             this.panel1.Controls.Add(this.mdb_shell);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -615,7 +597,7 @@ namespace Wnmp.Forms
         public System.Windows.Forms.Button php_start;
         public System.Windows.Forms.Button php_stop;
         public System.Windows.Forms.Button ngx_stop;
-        public System.Windows.Forms.Button start_all;
+        public System.Windows.Forms.Button start;
         public System.Windows.Forms.Button stop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button ngx_config;

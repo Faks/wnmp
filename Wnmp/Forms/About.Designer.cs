@@ -105,9 +105,9 @@
             this.copyrightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightLabel.Location = new System.Drawing.Point(190, 241);
             this.copyrightLabel.Name = "copyrightLabel";
-            this.copyrightLabel.Size = new System.Drawing.Size(282, 18);
+            this.copyrightLabel.Size = new System.Drawing.Size(385, 18);
             this.copyrightLabel.TabIndex = 4;
-            this.copyrightLabel.Text = "Copyright (C) 2012-2015 by Kurt Cancemi";
+            this.copyrightLabel.Text = "Copyright (C) 2012-2015 by Kurt Cancemi and Jonh Mark";
             // 
             // pictureBox1
             // 
@@ -172,7 +172,8 @@
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(651, 313);
             this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "Programmers\n=========\nKurt Cancemi";
+            this.richTextBox2.Text = "Programmers\n=========\nKurt Cancemi\nJonh Mark";
+            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // License
             // 

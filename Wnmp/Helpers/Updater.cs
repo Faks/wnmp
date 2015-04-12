@@ -32,22 +32,21 @@ namespace Wnmp.Helpers
     /// </summary>
     class Updater
     {
-        public Main form;
-        private Uri Wnmp_Upgrade_URL; // Wnmp upgrade installer url
-        private Version NEW_WNMP_VERSION; // Wnmp version in the XML
-        private readonly Version WNMP_VER = new Version(Application.ProductVersion); // Current program version
-        private readonly string UpdateExe = Main.StartupPath + "/Wnmp-Upgrade-Installer.exe";
-        private readonly string WNMP_NEW = Main.StartupPath + "/Wnmp_new.exe";
-        private readonly string UPDATER = Main.StartupPath + "/updater.exe";
-        private WebClient webClient;
-        private const string UpdateXMLURL = Constants.UpdateXMLURL;
+        private static Uri Wnmp_Upgrade_URL; // Wnmp upgrade installer url
+        private static Version NEW_WNMP_VERSION; // Wnmp version in the XML
+        private static readonly Version WNMP_VER = new Version(Application.ProductVersion); // Current program version
+        private static readonly string UpdateExe = Main.StartupPath + "/Wnmp-Upgrade-Installer.exe";
+        private static readonly string WNMP_NEW = Main.StartupPath + "/Wnmp_new.exe";
+        private static readonly string UPDATER = Main.StartupPath + "/updater.exe";
+        private static WebClient webClient;
+        private const string UpdateXMLURL = "http://wnmp.x64architecture.com/update.xml";
 
         #region ReadUpdateXML
         /// <summary>
         /// Fetches and reads the update xml
         /// </summary>
         /// <returns>True on sucess and False on failure</returns>
-        private bool ReadUpdateXML()
+        private static bool ReadUpdateXML()
         {
             const string xmlUrl = UpdateXMLURL;
             var elementName = "";
@@ -86,17 +85,17 @@ namespace Wnmp.Helpers
         /// </summary>
         /// <param name="uri"></param>
         /// <param name="path"></param>
-        private void DownloadWnmpUpdate(Uri uri, string path)
+        private static void DownloadWnmpUpdate(Uri uri, string path)
         {
             var frm = new UpdateProgress();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.Show();
-            //Program.formInstance.Enabled = false;
+            Program.formInstance.Enabled = false;
 
             webClient = new WebClient();
 
             frm.FormClosed += (s, e) => {
-                //Program.formInstance.Enabled = true;
+                Program.formInstance.Enabled = true;
                 webClient.CancelAsync();
             };
 
@@ -126,7 +125,7 @@ namespace Wnmp.Helpers
         /// <summary>
         /// Checks for updates
         /// </summary>
-        public void CheckForUpdates(bool AutoUpdate)
+        public static void CheckForUpdates(bool AutoUpdate)
         {
             if (!ReadUpdateXML())
                 return;
@@ -151,10 +150,11 @@ namespace Wnmp.Helpers
         /// <summary>
         /// Backs up the configuration files for Nginx, MariaDB, and PHP
         /// </summary>
-        private void DoBackUp()
+        private static void DoBackUp()
         {
-            string[] files = { Main.StartupPath + "/php/php.ini", Main.StartupPath + "/conf/nginx.conf", Main.StartupPath + "/mariadb/my.ini" };
-            foreach (string file in files) {
+            var wd = Main.StartupPath;
+            string[] files = { wd + "/php/php.ini", wd + "/conf/nginx.conf", wd + "/mariadb/my.ini" };
+            foreach (var file in files) {
                 if (File.Exists(file)) {
                     var dest = String.Format("{0}.old", file);
                     File.Copy(file, dest, true);
@@ -169,7 +169,7 @@ namespace Wnmp.Helpers
         /// and excutes the updater if true.
         /// </summary>
         /// <param name="days"></param>
-        public void DoDateEclasped()
+        public static void DoDateEclasped()
         {
             if (Options.settings.Lastcheckforupdate != DateTime.MinValue) {
                 var LastCheckForUpdate = Options.settings.Lastcheckforupdate;
@@ -186,7 +186,7 @@ namespace Wnmp.Helpers
         /// <summary>
         /// Kills Nginx, MariaDB, and PHP
         /// </summary>
-        private void KillProcesses()
+        private static void KillProcesses()
         {
             string[] processtokill = { "php-cgi", "nginx", "mysqld" };
             var processes = Process.GetProcesses();

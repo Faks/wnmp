@@ -49,17 +49,18 @@ namespace Wnmp.Forms
 
         private void SetEditor()
         {
-            string input = "";
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "executable files (*.exe)|*.exe|All files (*.*)|*.*";
-            dialog.Title  = "Select a text editor";
+            var input = String.Empty;
+            var dialog = new OpenFileDialog();
+            dialog.Filter =
+                "executable files (*.exe)|*.exe|All files (*.*)|*.*";
+            dialog.Title = "Select a text editor";
             if (dialog.ShowDialog() == DialogResult.OK)
                 input = dialog.FileName;
 
             editorTB.Text = dialog.FileName;
             settings.Editor = dialog.FileName;
 
-            if (input == "")
+            if (input == String.Empty)
                 settings.Editor = "notepad.exe";
             editorTB.Text = settings.Editor;
         }
@@ -153,13 +154,13 @@ namespace Wnmp.Forms
         private void UpdatePHPngxCfg()
         {
             int i;
-            int ProcessCount = Options.settings.PHPProcesses;
+            int pp = Options.settings.PHPProcesses;
             int port = Options.settings.PHPPort;
 
             using (var sw = new StreamWriter(Main.StartupPath + "/conf/php_processes.conf")) {
                 sw.WriteLine("# DO NOT MODIFY!!! THIS FILE IS MANAGED BY THE WNMP CONTROL PANEL.\r\n");
                 sw.WriteLine("upstream php_processes {");
-                for (i = 1; i <= ProcessCount; i++) {
+                for (i = 1; i <= pp; i++) {
                     sw.WriteLine("    server 127.0.0.1:" + port + " weight=1;");
                     port++;
                 }
