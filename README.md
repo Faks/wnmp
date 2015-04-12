@@ -5,8 +5,8 @@ Wnmp values security, stability and user friendliness.
 
 ### Current Wnmp Versions:
 
-  * Wnmp 2.1.6
-  * Wnmp Control Panel 2.3.6
+  * Wnmp 2.1.7
+  * Wnmp Control Panel 2.3.7
 
 ----
 
@@ -19,9 +19,10 @@ Wnmp values security, stability and user friendliness.
   * PHP 5.6.5 (Non Thread Safe + FastCGI)
 
   * phpMyAdmin 4.3.9
-  
-----
 
+----
+### Added Windows Xp Support
+  
 ### How to Install
 
   1. To install download the latest version of Wnmp [here][1] (latest version 2.1.6)
