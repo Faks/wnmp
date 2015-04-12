@@ -22,7 +22,10 @@ namespace Wnmp.Tests
                 Assert.AreEqual("Windows 7", OSVersionInfo.Name);
             } else if (major == 6 && minor == 0) {
                 Assert.AreEqual("Windows Vista", OSVersionInfo.Name);
-            } else {
+            }else if (major == 4 && minor >= 0) {
+                Assert.AreEqual("Windows XP", OSVersionInfo.Name);
+            } 
+			else {
                 Assert.Ignore();
             }
         }
